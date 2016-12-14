@@ -1,0 +1,22 @@
+name "isc"
+description "A simple vibe.d server application."
+authors "sbiedermann"
+copyright "Copyright © 2016, sbiedermann"
+license "proprietary"
+
+dependency "vibe-d" version="~>0.7.29"
+
+configuration "server" {
+	targetType "executable"
+	versions "server"
+    versions "VibeDefaultMain"
+    targetName "iscd"
+}
+
+configuration "client" {
+	targetType "executable"
+    versions "client"
+    versions "VibeDisableCommandLineParsing"
+    targetName "isc"
+    dependency "luad" version="~master"
+}
